@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <%= pluralize(Boat.count, 'boat found') %>
+    <h4><%= pluralize(Boat.count, 'boat') %></h4>
   </div>
 <div class="cards">
   <% @boats.each do |boat| %>
