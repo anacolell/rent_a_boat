@@ -1,4 +1,10 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[home index]
+  def index
+    @boats = policy_scope(Boat)
+    # authorize @boats
+  end
+
   def new
     @boat = Boat.new
     authorize @boat
