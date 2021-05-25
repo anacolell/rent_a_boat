@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <%= pluralize(Boat.count, 'boat found') %>
+  </div>
+<div class="cards">
+  <% @boats.each do |boat| %>
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <h5><%= boat.name %></h5>
+      <p><%= boat.location %></p>
+      <p><%= boat.price %> €</p>
+    </div>
+    <% end %>
+  </div>
+</div>
