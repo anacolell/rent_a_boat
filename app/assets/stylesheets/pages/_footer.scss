@@ -1,3 +1,21 @@
+.footer-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  hr {
+    padding-bottom: 0px;
+    margin: 0;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0px;
+}
+
 .img-footer{
   width:80px;
   margin:0;
