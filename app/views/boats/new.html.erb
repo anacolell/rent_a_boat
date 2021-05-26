@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="container">
 <h3>Add your boat</h3>
 <%= simple_form_for(@boat) do |f| %>
   <div class="form-inputs">
@@ -15,10 +15,9 @@
       <%= f.button :submit %>
     </div>
   <% end %>
-  <%= link_to 'Back to all listings', boats_path, :class => "back-button" %>
+<%= link_to 'Back to all listings', boats_path, :class => "back-button" %>
   </div>
 
-<%= link_to 'Back', boats_path %>
 </div>
 
 

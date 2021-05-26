@@ -1,6 +1,9 @@
-.wrapper {
+.container {
   margin: 0 auto;
   width: 50%;
+  margin-bottom: 8px;
+  height: 600px;
+  overflow: scroll;
 }
 
 .form-actions {
