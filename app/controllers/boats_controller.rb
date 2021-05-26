@@ -3,7 +3,16 @@ class BoatsController < ApplicationController
   def index
     @boats = policy_scope(Boat)
     # authorize @boats
+
+    @markers = @boats.geocoded.map do |map|
+      {
+        lat: boat.laitude,
+        lng: boat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { boat: boat })
+      }
+    end
   end
+end
 
   def new
     @boat = Boat.new
@@ -23,4 +32,3 @@ class BoatsController < ApplicationController
   def boat_params
     params.require(:boat).permit(:price, :name, :location, :availability, :capacity, :size, :type, :equipment, :description)
   end
-end
