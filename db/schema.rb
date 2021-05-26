@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_091000) do
+
+ActiveRecord::Schema.define(version: 2021_05_26_091049) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +24,7 @@ ActiveRecord::Schema.define(version: 2021_05_26_091000) do
     t.boolean "availability", default: true
     t.integer "capacity"
     t.float "size"
-    t.string "type"
-    t.string "equipment"
+    t.string "boat_type"
     t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
