@@ -26,6 +26,7 @@ class BoatsController < ApplicationController
     @boat.user = current_user
     authorize @boat
     @boat.save
+
     # redirect_to boat_path(@boat)
     redirect_to boat_path(@boat)
   end

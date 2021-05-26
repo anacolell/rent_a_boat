@@ -1,16 +1,60 @@
 .container {
   margin: 0 auto;
+  position: relative;
 }
 
-.h2 {
+.back-button {
+  background-color: rgba(77, 90, 180,0.5);
+  position: absolute;
+  top: 24px;
+  right: 16px;
+
+  &:hover {
+    background-color: rgba(77, 90, 180,1);
+  }
+}
+
+.back-button-link {
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+h2 {
   margin-top: 24px;
+  font-weight: bolder;
 }
 
 .basic-info {
   display: flex;
-  margin: 16px 0px;
+  margin: 16px 0px 0px 0px;
+  align-items: center;
 }
 
 .boat-info {
   padding: 0px 16px 0px 0px;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.fas {
+  font-size: 8px;
+}
+
+#info-subheader {
+  margin-bottom: 0px;
+}
+
+#description-text {
+  margin-top: 24px;
 }

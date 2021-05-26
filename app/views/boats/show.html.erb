@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="back-button">
+    <%= link_to 'Go back', boats_path, :class => "back-button-link" %>
+  </div>
   <h2 id="listing-name"><%= @boat.name %></h2>
   <div class="basic-info">
     <p class="boat-info">
@@ -7,9 +10,18 @@
     <p class="boat-info">
       <%= @boat.size %> m
     </p>
+    <p class="boat-info">
+      <%= @boat.price %>€ per night
+    </p>
   </div>
+  <hr>
   <div class="boat-description">
-    <h3>About the <%= @boat.boat_type %> of <%= @boat.user.first_name %></h3>
+    <h3>About the <%= @boat.boat_type.capitalize() %> of <%= @boat.user.first_name %></h3>
+    <p id="info-subheader"><b><%= @boat.boat_type.capitalize() %>, <%= @boat.size %>m</b></p>
+    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <p id="description-text">
+      <%= @boat.description %>
+    </p>
   </div>
 </div>
 
