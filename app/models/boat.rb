@@ -7,7 +7,6 @@ class Boat < ApplicationRecord
   validates :capacity, presence: true, numericality: { only_integer: true }
   validates :size, presence: true, numericality: { only_integer: true }
   validates :boat_type, presence: true, inclusion: { in: TYPE }
-  # validates :equipment
   validates :description, presence: true
 
   belongs_to :user
