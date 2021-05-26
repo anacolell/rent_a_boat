@@ -1,9 +1,10 @@
-.container {
+.wrapper {
   margin: 0 auto;
   width: 50%;
   margin-bottom: 8px;
   height: 600px;
   overflow: scroll;
+  position: relative;
 }
 
 .form-actions {
@@ -37,6 +38,9 @@
   margin-left: 8px;
   padding: 6px 12px;
   height: 40px;
+  position: absolute;
+  top: 8px;
+  right: 0px;
 
   &:hover {
     color: white;
