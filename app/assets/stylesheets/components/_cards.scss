@@ -42,7 +42,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +54,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category {
+
+}
+
+.card-category h3 {
+  letter-spacing: 0.15em;
+}
+
 .bookmark a{
   position:absolute;
   color:#3b3b3b;
@@ -62,10 +70,12 @@
   right:15px;
   opacity:0.3;
   text-decoration:none;
+  transition: 0.3;
 }
 
 .bookmark a:hover{
-  color:$blue;
+  color:$yellow;
+  opacity: 0.7;
 }
 
 .boat-name-text a {
