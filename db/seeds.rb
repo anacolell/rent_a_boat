@@ -23,11 +23,11 @@ puts 'Creating boats...'
 
 10.times do
   boat = Boat.create!(
-    price: rand(90..500),
+    price: rand(60..200),
     name: Faker::Games::SuperMario.character,
     location: Faker::Address.city,
-    capacity: rand(0..10),
-    size: rand(0..30),
+    capacity: rand(2..10),
+    size: rand(5..20),
     description: Faker::Lorem.paragraph,
     boat_type: ['sailboat', 'catamaran', 'motorboat', 'yacht', 'rib', 'canal boat'].sample,
     user: User.all.sample,
