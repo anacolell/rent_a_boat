@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 id="listing-name"><%= @boat.name %></h2>
+  <div class="basic-info">
+    <p class="boat-info">
+      <%= @boat.capacity %> persons
+    </p>
+    <p class="boat-info">
+      <%= @boat.size %> m
+    </p>
+  </div>
+  <div class="boat-description">
+    <h3>About the <%= @boat.boat_type %> of <%= @boat.user.first_name %></h3>
+  </div>
+</div>
