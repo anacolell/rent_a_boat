@@ -8,7 +8,7 @@
         <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80" />
         <div class="p-3">
           <div class="d-flex justify-content-between mb-2">
-            <h5><%= boat.name.upcase %></h5>
+            <h5 class="boat-name-text"><%= link_to "#{boat.name}", boat_path(boat), class:'boat-name' %></h5>
             <div><i class="fas fa-map-marker-alt"></i> <%= boat.location %></div>
           </div>
           <div class="d-flex flex-column justify-content-center">
@@ -17,7 +17,7 @@
             <h6><%= boat.price %> € / day</h6>
           </div>
            <div class="bookmark">
-             <i class="fas fa-bookmark"></i>
+             <a href="#"><i class="fas fa-bookmark"></i></a>
            </div>
         </div>
       </div>
