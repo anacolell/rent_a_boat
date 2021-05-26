@@ -8,6 +8,12 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @markers =
+      {
+        lat: @boat.latitude,
+        lng: @boat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { boat: @boat })
+      }
   end
 
   def new
@@ -20,6 +26,8 @@ class BoatsController < ApplicationController
     @boat.user = current_user
     authorize @boat
     @boat.save
+
+    # redirect_to boat_path(@boat)
     redirect_to boat_path(@boat)
   end
 

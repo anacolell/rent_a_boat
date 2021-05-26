@@ -25,6 +25,8 @@ gem 'devise'
 gem 'pundit'
 gem 'faker'
 
+gem 'geocoder'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
