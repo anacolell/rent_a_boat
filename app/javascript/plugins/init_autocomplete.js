@@ -2,7 +2,7 @@ import places from 'places.js';
 
 const initAutocomplete = () => {
   const addressInput = document.getElementById('boat');
-  if (addressInout) {
+  if (addressInput) {
     places({ container: addressInput });
   }
 };
