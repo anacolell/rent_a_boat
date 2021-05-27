@@ -9,3 +9,21 @@
 .btn-signup:hover {
   opacity:1;
 }
+
+.btn-new-index {
+  background-color: rgba(77, 90, 180,0.5);
+  text-align:right;
+
+  &:hover {
+    background-color: rgba(77, 90, 180,1);
+  }
+}
+
+.btn-new-index-link {
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
