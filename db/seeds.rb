@@ -29,7 +29,7 @@ puts 'Creating boats...'
     capacity: rand(2..10),
     size: rand(5..20),
     description: Faker::Lorem.paragraph,
-    boat_type: ['sailboat', 'catamaran', 'motorboat', 'yacht', 'rib', 'canal boat'].sample,
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
   puts "#{boat.name} is created"
