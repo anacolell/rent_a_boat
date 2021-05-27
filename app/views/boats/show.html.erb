@@ -32,7 +32,7 @@
     <i class="fas fa-map-marker-alt marker-icon-show"></i> <%= @boat.location.upcase %> , COUNTRY
     <div class="show-stars"><i class="star-show fas fa-star"></i><i class="star-show fas fa-star"></i><i class="star-show fas fa-star"></i><i class="star-show fas fa-star"></i><i class="star-show fas fa-star lightgray"></i></div>
     <div class="my-4">
-      <%= link_to 'Book now', '#', :class => "btn btn-outline-dark" %>
+      <%= link_to 'Book now', new_boat_booking_path(@boat), :class => "btn btn-outline-dark" %>
     </div>
   </div>
   <div class="bottom-info-show my-5">
