@@ -3,22 +3,32 @@
 <%= simple_form_for(@boat) do |f| %>
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :price %>
-    <%= f.input :location %>
-    <%= f.input :capacity %>
-    <%= f.input :size %>
-    <%= f.input :boat_type, collection: Boat::BOAT_TYPE %>
+    <div class="row">
+      <div class="col-9">
+      <%= f.input :location %>
+      </div>
+      <div class="col-3">
+        <%= f.input :boat_type, collection: Boat::BOAT_TYPE %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.input :price %>
+      </div>
+      <div class="col">
+        <%= f.input :capacity %>
+      </div>
+      <div class="col">
+        <%= f.input :size %>
+      </div>
+    </div>
     <%= f.input :description %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, :class => "submit-button" %>
+<% end %>
   </div>
-  <div class="button-container">
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-  <% end %>
-  <%= link_to 'Back to all listings', boats_path, :class => "back-button" %>
-  </div>
-
+    <%= link_to 'Back to all listings', boats_path, :class => "back-button" %>
 </div>
+
 
 
