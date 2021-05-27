@@ -3,8 +3,12 @@
   width: 50%;
   margin-bottom: 8px;
   height: 600px;
-  overflow: scroll;
+  overflow: visible;
   position: relative;
+}
+
+h3 {
+  margin: 24px 0px;
 }
 
 .form-actions {
@@ -13,23 +17,19 @@
   border-radius: 4px;
   width: fit-content;
   height: 40px;
-
-  .btn {
-    color: white;
-  }
-}
-
-.form-actions:hover {
-  background-color: rgba(77, 90, 180,1);
 }
 
 .button-container {
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 500px;
+}
+.form-actions:hover {
+  background-color: rgba(77, 90, 180,1);
 }
 
-.back-button {
+a.back-button {
   background-color: rgba(77, 90, 180, 0.5);
   color: white;
   border-radius: 4px;
@@ -39,8 +39,28 @@
   padding: 6px 12px;
   height: 40px;
   position: absolute;
-  top: 8px;
-  right: 0px;
+  top: 500px;
+  left: 120px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(77, 90, 180,1);
+  }
+}
+
+.submit-button {
+  background-color: rgba(77, 90, 180, 0.5);
+  color: white;
+  border-radius: 4px;
+  width: fit-content;
+  color: white;
+  margin-left: 0px;
+  padding: 6px 12px;
+  height: 40px;
+  position: absolute;
+  top: 500px;
+  left: 0px;
 
   &:hover {
     color: white;
