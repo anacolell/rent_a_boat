@@ -1,12 +1,12 @@
 class Boat < ApplicationRecord
-  TYPE = ['sailboat', 'catamaran', 'motorboat', 'yacht', 'rib', 'canal boat']
+  BOAT_TYPE = ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat']
   validates :price, presence: true, numericality: { only_integer: true }
   validates :name, presence: true
   validates :location, presence: true
   validates :availability, presence: true
   validates :capacity, presence: true, numericality: { only_integer: true }
   validates :size, presence: true, numericality: { only_integer: true }
-  # validates :boat_type, presence: true, inclusion: { in: TYPE }
+  validates :boat_type, presence: true, inclusion: { in: BOAT_TYPE }
   validates :description, presence: true
 
   belongs_to :user
