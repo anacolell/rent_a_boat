@@ -1,20 +1,12 @@
-.show-container {
-  margin: 0 auto;
-  position: relative;
-}
-
-.back-button {
+.back-button-show {
   background-color: rgba(77, 90, 180,0.5);
-  position: absolute;
-  top: 24px;
-  right: 16px;
 
   &:hover {
     background-color: rgba(77, 90, 180,1);
   }
 }
 
-.back-button-link {
+.back-button-link-show {
   color: white;
 
   &:hover {
@@ -23,38 +15,21 @@
   }
 }
 
-h2 {
-  margin-top: 24px;
-  font-weight: bolder;
+.star-show {
+  color:$yellow;
 }
 
-.basic-info {
-  display: flex;
-  margin: 16px 0px 0px 0px;
-  align-items: center;
+.star-show lightgray {
+  color:lightgray;
 }
+// .carousel .item {
+//   height: 500px;
+// }
 
-.boat-info {
-  padding: 0px 16px 0px 0px;
-}
-
-hr {
-  margin-top: 0px;
-  margin-bottom: 32px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
-.fas .star-show {
-  font-size: 8px;
-}
-
-#info-subheader {
-  margin-bottom: 0px;
-}
-
-#description-text {
-  margin-top: 24px;
-}
+// .item img {
+//     position: absolute;
+//     object-fit:cover;
+//     top: 0;
+//     left: 0;
+//     min-height: 500px;
+// }
