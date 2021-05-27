@@ -5,6 +5,11 @@ class BoatsController < ApplicationController
   def index
     @boats = policy_scope(Boat)
     # authorize @boats
+    if params[:query].present?
+      @boats = Boat.where("location ILIKE ?", "%#{params[:query]}%")
+    else
+      @boats = Boat.all
+    end
   end
 
   def show
