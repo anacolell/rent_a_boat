@@ -2,9 +2,11 @@
   margin: 0 auto;
   width: 50%;
   margin-bottom: 8px;
-  height: 600px;
-  overflow: scroll;
   position: relative;
+}
+
+h3 {
+  margin: 24px 0px;
 }
 
 .form-actions {
@@ -20,13 +22,19 @@
   }
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 500px;
+}
 .form-actions:hover {
   background-color: rgba(77, 90, 180,1);
 }
 
 .button-container {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 
@@ -40,8 +48,8 @@
   padding: 6px 12px;
   height: 40px;
   position: absolute;
-  top: 8px;
-  right: 0px;
+  top: 500px;
+  left: 120px;
 
   &:hover {
     color: white;

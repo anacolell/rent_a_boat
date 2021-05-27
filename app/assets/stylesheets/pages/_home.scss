@@ -37,3 +37,33 @@
     color: #5dd7d7;
   }
 }
+
+ .search {
+  display: flex;
+  color: #20515E;
+}
+
+  .fly-submit {
+    margin-left: 5px;
+    background-color: white;
+    color: #20515E;
+    border: 2px solid light-grey;
+    border-radius: 12px;
+    font-weight: bolder;
+
+    &:hover {
+      text-decoration: none;
+      color: #5dd7d7;
+    }
+  }
+
+  .form-control {
+    border-radius: 12px;
+    padding: 12px;
+    text-decoration: none;
+    color: #20515E;
+    border: 2px solid white;
+    background-color: white;
+
+  }
+
