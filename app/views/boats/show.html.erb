@@ -3,6 +3,15 @@
     <%= link_to 'Go back', boats_path, :class => "back-button-link" %>
   </div>
   <h2 id="listing-name"><%= @boat.name %></h2>
+<!--   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner"> -->
+      <% @boat.photos.each do |photo| %>
+<!--       <div class="carousel-item active">
+ -->        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<!--       </div>
+ -->      <% end %>
+<!--     </div>
+  </div> -->
   <div class="basic-info">
     <p class="boat-info">
       <%= @boat.capacity %> persons

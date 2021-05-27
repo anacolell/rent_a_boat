@@ -9,6 +9,7 @@
     <%= f.input :size %>
     <%= f.input :boat_type, collection: Boat::BOAT_TYPE %>
     <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   </div>
   <div class="button-container">
     <div class="form-actions">
