@@ -1,0 +1,16 @@
+<div class="wrapper">
+<h2>Create booking</h2>
+<%= simple_form_for [@boat, @booking] do |f| %>
+    <%= f.error :base, :class => "booking-error" %>
+  <div class="form-inputs">
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+  </div>
+  <div class="button-container">
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
