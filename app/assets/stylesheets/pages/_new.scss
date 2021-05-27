@@ -3,6 +3,7 @@
   width: 50%;
   margin-bottom: 8px;
   position: relative;
+  height: 75vh;
 }
 
 h3 {
@@ -50,6 +51,27 @@ h3 {
   position: absolute;
   top: 500px;
   left: 120px;
+  margin-top: 24px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(77, 90, 180,1);
+  }
+}
+
+.submit-button {
+  background-color: rgba(77, 90, 180, 0.5);
+  color: white;
+  border-radius: 4px;
+  width: fit-content;
+  color: white;
+  padding: 6px 12px;
+  height: 40px;
+  position: absolute;
+  top: 500px;
+  left: 0px;
+  margin-top: 24px;
 
   &:hover {
     color: white;
@@ -60,4 +82,29 @@ h3 {
 
 h2 {
   margin: 24px 0px;
+}
+
+.form-control {
+  padding: 8px;
+}
+
+input.btn.booking-submit {
+  position: absolute;
+  bottom: 210px;
+  background-color: rgba(77, 90, 180, 0.5);
+  border-radius: 4px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(77, 90, 180,1);
+  }
+}
+
+.booking-error {
+  background-color: rgba(253, 16, 21, 0.3);
+  width: fit-content;
+  height: fit-content;
+  border-radius: 4px;
+  margin: 16px 0px;
 }
