@@ -51,8 +51,12 @@ boat1 = Boat.new(
     user: User.all.sample,
   )
 
-boat1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://static.wixstatic.com/media/420204_f07b4bf2578942758550d87fc74247e7~mv2_d_3072_2302_s_2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/org_1b27a7e1e950c098_1558005910000-02_jp.webp", "https://media.istockphoto.com/photos/luxury-private-motor-yacht-sailing-at-sea-picture-id925066016?k=6&m=925066016&s=612x612&w=0&h=xOn5NsmN6-6ZJiittH4Q0-KfbHCgjbECPa9Dv0ued4U=", "https://www.princessyachts.com/media/10251/85my-flybridge-12.jpg?anchor=center&mode=crop&width=1120&heightratio=0.6666666666666666666666666667&format=jpg&slimmage=true&quality=80&rnd=132085331710000000"].each do |url|
+  boat1.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat1.save!
+
+
 
 
 file = URI.open('https://partners.yachtbooker.com/media/images/800x533/Oceanis_51_1_-5_1Cab-_rear_view.jpg')
@@ -66,9 +70,11 @@ boat2 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-boat2.save!
 
+["https://partners.yachtbooker.com/media/images/800x533/Oceanis_51_1_-5_1Cab-_rear_view.jpg", "https://www.kuonistores.co.uk/upload/inspiration/james/cruise-suite/pool-deck.jpg", "https://www.princessyachts.com/media/10251/85my-flybridge-12.jpg?anchor=center&mode=crop&width=1120&heightratio=0.6666666666666666666666666667&format=jpg&slimmage=true&quality=80&rnd=132085331710000000"].each do |url|
+  boat2.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
+boat2.save!
 
 file = URI.open('https://static.wixstatic.com/media/420204_eae62e0b0b334257a68c66580649e775~mv2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/leader-10_d5afql4p.webp')
 boat3 = Boat.new(
@@ -81,7 +87,10 @@ boat3 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+["https://static.wixstatic.com/media/420204_eae62e0b0b334257a68c66580649e775~mv2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/leader-10_d5afql4p.webp", "https://www.kuonistores.co.uk/upload/inspiration/james/cruise-suite/pool-deck.jpg", "https://www.princessyachts.com/media/10251/85my-flybridge-12.jpg?anchor=center&mode=crop&width=1120&heightratio=0.6666666666666666666666666667&format=jpg&slimmage=true&quality=80&rnd=132085331710000000"].each do |url|
+  boat3.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat3.save!
 
 
@@ -96,7 +105,10 @@ boat4 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+["https://www.booking-manager.com/cbm/documents/1193304580000100000_Hanse_575_main.jpg", "https://www.princessyachts.com/media/10251/85my-flybridge-12.jpg?anchor=center&mode=crop&width=1120&heightratio=0.6666666666666666666666666667&format=jpg&slimmage=true&quality=80&rnd=132085331710000000"].each do |url|
+  boat4.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat4.save!
 
 file = URI.open('https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000')
