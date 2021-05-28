@@ -10,3 +10,8 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.avatar-nav-link:hover,
+.avatar-nav-link:focus {
+  cursor: pointer;
+}

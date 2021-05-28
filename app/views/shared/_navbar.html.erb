@@ -20,7 +20,7 @@
 <!--         <li class="nav-item">
           <\%= link_to "Messages", "#", class: "nav-link" %>
         </li> -->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown avatar-nav-link">
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, width: 40, height: 40, radius: 'max', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
