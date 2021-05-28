@@ -8,7 +8,7 @@ class Booking < ApplicationRecord
   # validates :end_date_after_start_date
   # validates :total_price, presence: true, numericality: { only_integer: true }
   # validates :status, presence: true
-  validate :check_availability
+  # validate :check_availability
 
   def check_availability
     range_var = (start_date..end_date)
