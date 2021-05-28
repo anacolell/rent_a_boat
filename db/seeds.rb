@@ -8,6 +8,7 @@
 require 'faker'
 puts 'Cleaning database...'
 
+Booking.destroy_all
 Boat.destroy_all
 User.destroy_all
 
@@ -19,20 +20,166 @@ User.create!(first_name: 'Qendresa', email: 'qendresa@gmail.com', password: '123
 
 puts "#{User.count} users created!"
 
-puts 'Creating boats...'
+# puts 'Creating boats...'
 
-10.times do
-  boat = Boat.create!(
+# 10.times do
+#   boat = Boat.create!(
+#     price: rand(60..200),
+#     name: Faker::Games::SuperMario.character,
+#     location: Faker::Address.city,
+#     capacity: rand(2..10),
+#     size: rand(5..20),
+#     description: Faker::Lorem.paragraph,
+#     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+#     user: User.all.sample,
+#   )
+#   puts "#{boat.name} is created"
+# end
+
+# puts "#{Boat.count} boats created!"
+
+
+file = URI.open('https://static.wixstatic.com/media/420204_f07b4bf2578942758550d87fc74247e7~mv2_d_3072_2302_s_2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/org_1b27a7e1e950c098_1558005910000-02_jp.webp')
+boat1 = Boat.new(
     price: rand(60..200),
-    name: Faker::Games::SuperMario.character,
-    location: Faker::Address.city,
+    name: "MERRY FISHER 795",
+    location: "San Fransisco, CA, USA",
     capacity: rand(2..10),
     size: rand(5..20),
-    description: Faker::Lorem.paragraph,
+    description: "The Merry Fisher 795 adopts a dynamic and rewarding design, both inside and out. All the innovations of the recent Merry Fisher 695 can be found on board, plus many more!",
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-  puts "#{boat.name} is created"
-end
 
-puts "#{Boat.count} boats created!"
+boat1.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat1.save!
+
+
+file = URI.open('https://partners.yachtbooker.com/media/images/800x533/Oceanis_51_1_-5_1Cab-_rear_view.jpg')
+boat2 = Boat.new(
+    price: rand(60..200),
+    name: "LEADER 10",
+    location: "Miami, Florida, USA",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "The Leader 10 dazzles with its dynamic design that allows you free reign of the blue ocean: excellent handling and performance at sea; comfort onboard and an extremely bright interior.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat2.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat2.save!
+
+
+file = URI.open('https://static.wixstatic.com/media/420204_eae62e0b0b334257a68c66580649e775~mv2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/leader-10_d5afql4p.webp')
+boat3 = Boat.new(
+    price: rand(60..200),
+    name: "Marina Estrella Four",
+    location: "Nice, France",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "Quicksilver 675 Sundeck Activ is a boat created for maximum enjoyment on the sea. It is equipped with a Mercury VERADO 200HP outboard engine that will deliver you an amazing driving experience and fuel economy.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat3.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat3.save!
+
+
+file = URI.open('https://www.booking-manager.com/cbm/documents/1193304580000100000_Hanse_575_main.jpg')
+boat4 = Boat.new(
+    price: rand(60..200),
+    name: "Viviella",
+    location: "Sydney, Australia",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "Designed for your comfort, the helm affords precise control and maximum ease to benefit from the smooth, sporty hull. The boat owes its unique design to the Garroni Designers.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat4.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat4.save!
+
+file = URI.open('https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000')
+boat5 = Boat.new(
+    price: rand(60..200),
+    name: "Marbella Cruise",
+    location: "Gothenburg",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "Sailing yacht - Hanse 575 for rent in Spain, La Lonja Marina Charter.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat5.save!
+
+file = URI.open('https://cdn.boatinternational.com/files/2021/02/1440f900-6555-11eb-867d-c1d6b000ca05-BLACK-WHITE-Superyacht-for-sale-charter-01.jpg')
+boat6 = Boat.new(
+    price: rand(60..200),
+    name: "LEADER 10",
+    location: "Stockholm",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "The Leader 10 dazzles with its dynamic design that allows you free reign of the blue ocean: excellent handling and performance at sea; comfort onboard and an extremely bright interior.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat6.save!
+
+file = URI.open('https://moranyachts.imgix.net/wp-content/uploads/Luxury-yacht-sales-brokerage-scaled.jpg?auto=format&fit=crop&fm=webp%26nbsp%3B2x&h=400&ixlib=php-3.1.0&w=720&s=d8697af45f516e13c04e4d18813420da')
+boat7 = Boat.new(
+    price: rand(60..200),
+    name: "Saona 47 | Nocrala",
+    location: "Germany",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "Sailing yacht - Bali Catspace for rent in France, Port de Bormes-les-Mimosas.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat7.save!
+
+file = URI.open('https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg')
+boat8 = Boat.new(
+    price: rand(60..200),
+    name: "Lily ",
+    location: "Italy",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "The co-pilot has his/her own navigation seating, which provides 2 seats facing the sea and is set up by simply tilting the back.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat8.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat8.save!
+
+file = URI.open('https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/c3/e5.jpg')
+boat9 = Boat.new(
+    price: rand(60..200),
+    name: "Lagoon 52F",
+    location: "France",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "The Leader 10 dazzles with its dynamic design that allows you free reign of the blue ocean: excellent handling and performance at sea; comfort onboard and an extremely bright interior.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat9.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat9.save!
+
+file = URI.open('https://www.ferretti-yachts.com/uploadB2B/Models/Images/Main/Ferretti/medium/44389.jpg')
+boat10 = Boat.new(
+    price: rand(60..200),
+    name: "Nautitech 46 Fly",
+    location: "Los Angeles",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "Designed for your comfort, the helm affords precise control and maximum ease to benefit from the smooth, sporty hull. The boat owes its unique design to the Garroni Designers.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+boat10.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+boat10.save!
+

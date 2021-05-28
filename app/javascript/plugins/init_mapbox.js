@@ -9,6 +9,7 @@ const initMapbox = () => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  console.log(markers)
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
 };
 
@@ -26,7 +27,7 @@ const fitMapToMarkers = (map, markers) => {
       .setPopup(popup)
       .addTo(map);
   });
-   fitMapToMarkers(map, markers);
+   if (markers.length > 0) fitMapToMarkers(map, markers);
    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                        mapboxgl: mapboxgl }));
   }

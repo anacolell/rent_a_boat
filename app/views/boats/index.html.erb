@@ -11,7 +11,8 @@
   <div class="cards my-5">
     <% @boats.each do |boat| %>
       <div class="card-trip">
-        <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80" />
+        <!-- <img src="https://static.wixstatic.com/media/420204_f07b4bf2578942758550d87fc74247e7~mv2_d_3072_2302_s_2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/org_1b27a7e1e950c098_1558005910000-02_jp.webp" /> -->
+        <%= cl_image_tag boat.photos.first.key %>
         <div class="p-3">
           <div class="d-flex justify-content-between mb-2">
             <h5 class="boat-name-text"><%= link_to "#{boat.name}", boat_path(boat), class:'boat-name' %></h5>
