@@ -9,22 +9,26 @@
 }
 
 #background {
-  height: 90vh;
+  height: 67vh;
   width: 100%;
   background-size: cover;
   position: relative;
-  background-position: 0% 20%;
+  background-position: 0% 18%;
   background-repeat: no-repeat;
 }
 
 #header-container {
   position: absolute;
-  top: 100px;
+  top: 90px;
   left: 900px;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 32px 56px;
   border-radius: 16px;
+}
+
+.pb-3 {
+  margin-top: 0px;
 }
 
 .boats-button {
