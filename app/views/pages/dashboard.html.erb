@@ -15,7 +15,7 @@
         <p><%= @user.email %><p>
         <%= link_to "Edit account", edit_user_registration_path %>
         <div class="requests-window">
-          <% if @booking_requests.any? %>
+          <% if @booking_requests %>
           <h5 id="booking-header">Pending booking requests</h5>
             <% @booking_requests.each do |booking| %>
               <div class="booking-requests">
