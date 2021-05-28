@@ -42,14 +42,14 @@
           <% end %>
         </div>
         <% else %>
-          <p>You have no bookings</p>
+          <h4>You have no bookings</h4>
           <div class="text-center">
             <%= link_to "Explore boats", boats_path, class:"btn btn-lg btn-outline-primary text-center mt-4" %>
           </div>
         <% end %>
         <% unless @user.boat_ids.empty? %>
-        <div id="user-boats">
-          <h4>...and here are your boats!</h4>
+        <div id="user-boats" class="mt-5">
+          <h4>Here are your boats!</h4>
           <% @user.boats.each do |boat| %>
             <div class="card-dashboard">
               <div class="trip-info">
