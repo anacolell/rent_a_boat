@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[create] # add more methods if needed
-  # before_action :set_booking, only: %i[show] # add more methods if needed
+  before_action :set_booking, only: %i[edit update] # add more methods if needed
 
   def new
     @boat = Boat.find(params[:boat_id])
@@ -22,7 +22,27 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    if params[:query] == "accept"
+      @booking.status = "accepted"
+      @booking.save
+    elsif params[:query] == "reject"
+      @booking.status = "rejected"
+      @booking.save
+    end
+    redirect_to dashboard_path
+  end
+
+  def edit
+    authorize @booking
+  end
+
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :total_price, :status, :user_id, :boat_id)

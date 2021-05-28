@@ -62,6 +62,39 @@
         </div>
         <% end %>
       </div>
+      <div class="requests-window">
+        <% if @booking_requests.any? %>
+          <h5>Pending booking requests</h5>
+          <% @booking_requests.each do |booking| %>
+            <div class="booking-requests">
+              <% if (booking.status != "accepted" && booking.status != "rejected") %>
+                <p id="boat-name"><%= "#{booking.boat.name}" %></p>
+                <p><%= "#{booking.start_date} - #{booking.end_date}" %></p>
+                <div class="bookings-button">
+                  <div id="accept-button">
+                    <%= link_to "Accept", booking_path(booking, query: "accept"), method: :patch %>
+                  </div>
+                  <div id="reject-button">
+                    <%= link_to "Reject", booking_path(booking, query: "reject"), method: :patch %>
+                  </div>
+                </div>
+              <% else %>
+                <div></div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+<!--       pop-up window with pending bookings, when @ooking.save in bookings_controller
+  => display @boat.name + @booking.start_date / @booking.end_date here
+
+  on bookings_details view:
+  @user.details of the user that @booked
+  @booking.start_date / end_date
+  button the accept / reject
+  => when button clicked, default status of @booking changes
+  => status will be displayed in the dashboard for the @boat.user and @booking.user
+ -->
     </div>
   </div>
 </div>
