@@ -12,8 +12,30 @@
           <% end %>
         <p><%= @user.first_name %> <%= @user.last_name %><p>
         <p><%= @user.email %><p>
-        <div class="pending-requests">
-          pending requests
+        <div class="requests-window">
+          <% if @booking_requests.any? %>
+          <h5>Pending booking requests</h5>
+            <% @booking_requests.each do |booking| %>
+              <div class="booking-requests">
+                <% if (booking.status != "accepted" && booking.status != "rejected") %>
+                  <p id="boat-name"><%= "#{booking.boat.name}" %></p>
+                  <p><%= "#{booking.start_date} - #{booking.end_date}" %></p>
+                  <div class="bookings-button">
+                    <div id="accept-button">
+                      <%= link_to "Accept", booking_path(booking, query: "accept"), method: :patch %>
+                    </div>
+                    <div id="reject-button">
+                      <%= link_to "Reject", booking_path(booking, query: "reject"), method: :patch %>
+                    </div>
+                  </div>
+                <% else %>
+                  <div></div>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+            <div></div>
+          <% end %>
         </div>
       </div>
       </div>
@@ -62,29 +84,7 @@
         </div>
         <% end %>
       </div>
-      <div class="requests-window">
-        <% if @booking_requests.any? %>
-          <h5>Pending booking requests</h5>
-          <% @booking_requests.each do |booking| %>
-            <div class="booking-requests">
-              <% if (booking.status != "accepted" && booking.status != "rejected") %>
-                <p id="boat-name"><%= "#{booking.boat.name}" %></p>
-                <p><%= "#{booking.start_date} - #{booking.end_date}" %></p>
-                <div class="bookings-button">
-                  <div id="accept-button">
-                    <%= link_to "Accept", booking_path(booking, query: "accept"), method: :patch %>
-                  </div>
-                  <div id="reject-button">
-                    <%= link_to "Reject", booking_path(booking, query: "reject"), method: :patch %>
-                  </div>
-                </div>
-              <% else %>
-                <div></div>
-              <% end %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+
 <!--       pop-up window with pending bookings, when @ooking.save in bookings_controller
   => display @boat.name + @booking.start_date / @booking.end_date here
 
