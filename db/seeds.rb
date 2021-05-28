@@ -38,7 +38,6 @@ puts "#{User.count} users created!"
 
 # puts "#{Boat.count} boats created!"
 
-
 file = URI.open('https://static.wixstatic.com/media/420204_f07b4bf2578942758550d87fc74247e7~mv2_d_3072_2302_s_2.jpg/v1/fill/w_620,h_375,al_c,q_80,usm_0.66_1.00_0.01/org_1b27a7e1e950c098_1558005910000-02_jp.webp')
 boat1 = Boat.new(
     price: rand(60..200),
@@ -55,9 +54,6 @@ boat1 = Boat.new(
   boat1.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
 end
 boat1.save!
-
-
-
 
 file = URI.open('https://partners.yachtbooker.com/media/images/800x533/Oceanis_51_1_-5_1Cab-_rear_view.jpg')
 boat2 = Boat.new(
@@ -92,7 +88,6 @@ boat3 = Boat.new(
   boat3.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
 end
 boat3.save!
-
 
 file = URI.open('https://www.booking-manager.com/cbm/documents/1193304580000100000_Hanse_575_main.jpg')
 boat4 = Boat.new(
@@ -194,4 +189,3 @@ boat10 = Boat.new(
   )
 boat10.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 boat10.save!
-
