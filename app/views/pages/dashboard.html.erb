@@ -1,18 +1,65 @@
 <div class="container">
-  <div class="d-flex justify-content-around">
-    <div class="user-info text-center">
-      <%# if @user.photo? %>
-        <%#= cl_image_tag @user.photo, class: "avatar-large", crop: :fill %>
-        <%# else %>
-        <%= link_to edit_user_registration_path do %>
-            <%= image_tag('user.png', class: "avatar-dashboard") %>
+  <div class="dashboard-container mt-5">
+    <div class="d-flex justify-content-around">
+   <!--    profile and pending requests -->
+      <div class="pending requests">
+      <div class="user-info text-center">
+        <%# if @user.photo? %>
+          <%#= cl_image_tag @user.photo, class: "avatar-large", crop: :fill %>
+          <%# else %>
+          <%= link_to edit_user_registration_path do %>
+              <%= image_tag('user.png', class: "avatar-dashboard") %>
+          <% end %>
+        <p><%= @user.first_name %> <%= @user.last_name %><p>
+        <p><%= @user.email %><p>
+        <div class="pending-requests">
+          pending requests
+        </div>
+      </div>
+      </div>
+  <!--     dashboard right side -->
+      <div class="dashboard-right mt-5">
+        <div class="dashboard-header d-flex justify-content-between mb-4 align-items-center">
+        <h2 class="text-center mb-4">Hello, <strong><%= @user.first_name %></strong> !</h2>
+        <div class="d-flex justify-content-end">
+          <a href="#user-bookings" class="ml-5 dashboard-link"><h6>my bookings</h6></a>
+          <a href="#user-boats" class="ml-3 dashboard-link"><h6>my boats</h6></a>
+      </div>
+      </div>
+      <% unless @user.booking_ids.empty?  %>
+        <div id="user-bookings">
+          <h4>Here are your bookings:</h4>
+          <% @bookings.each do |booking| %>
+            <div class="card-dashboard">
+              <div class="trip-info">
+                <p>BOAT: <%= booking.boat.name %></p>
+                <p>DEPARTURE FROM: <%= booking.boat.location %></p>
+                <p>DATE: <%= booking.start_date.strftime("%d %B %Y") %> - <%= booking.end_date.strftime("%d %B %Y") %></p>
+                <p>STATUS: <%= booking.status %></p>
+              </div>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            </div>
+          <% end %>
+        </div>
+        <% else %>
+          <h4>You have no bookings</h4>
+          <div class="text-center">
+            <%= link_to "Explore boats", boats_path, class:"btn btn-lg btn-outline-primary text-center mt-4" %>
+          </div>
         <% end %>
-      <p><%= @user.first_name %> <%= @user.last_name %><p>
-      <p><%= @user.email %><p>
-      <div class="user-boats">
-      <h3>My boats</h3>
-        <% @user.boats.each do |boat| %>
-          <%= boat.name %>
+        <% unless @user.boat_ids.empty? %>
+        <div id="user-boats" class="mt-5">
+          <h4>Here are your boats!</h4>
+          <% @user.boats.each do |boat| %>
+            <div class="card-dashboard">
+              <div class="trip-info">
+                <%= boat.name %>
+                <%= boat.description %>
+                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              </div>
+            </div>
+          <% end %>
+        </div>
         <% end %>
       </div>
       <div class="requests-window">
@@ -48,21 +95,6 @@
   => when button clicked, default status of @booking changes
   => status will be displayed in the dashboard for the @boat.user and @booking.user
  -->
-    </div>
-    <div class="user-bookings">
-      <h2>Hello, <strong><%= @user.first_name %></strong> ! </h2>
-      <h3>Here are your bookings:</h3>
-      <% @bookings.each do |booking| %>
-    <div class="card-dashboard">
-      <div class="trip-info">
-        <p>BOAT: <%= booking.boat.name %></p>
-        <p>DEPARTURE FROM: <%= booking.boat.location %></p>
-        <p>DATE: <%= booking.start_date.strftime("%d %B %Y") %> - <%= booking.end_date.strftime("%d %B %Y") %></p>
-        <p>STATUS: <%= booking.status %></p>
-      </div>
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    </div>
-    <% end %>
     </div>
   </div>
 </div>
