@@ -10,5 +10,6 @@ class User < ApplicationRecord
   has_many :boats
   has_many :reviews, through: :boats
   has_many :bookings
+  has_one_attached :photo
   # has_many :photos, dependent: :destroy
 end
