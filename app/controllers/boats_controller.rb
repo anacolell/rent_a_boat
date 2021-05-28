@@ -5,20 +5,29 @@ class BoatsController < ApplicationController
   def index
     @boats = policy_scope(Boat)
     # authorize @boats
+
     if params[:query].present?
       @boats = Boat.where("location ILIKE ?", "%#{params[:query]}%")
     else
       @boats = Boat.all
     end
+
+     @markers = @boats.geocoded.map do |boat|
+    {
+      lat: boat.latitude,
+      lng: boat.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { boat: boat })
+    }
   end
+end
 
   def show
     @markers =
-      {
+      [{
         lat: @boat.latitude,
         lng: @boat.longitude,
         info_window: render_to_string(partial: "info_window", locals: { boat: @boat })
-      }
+      }]
   end
 
   def new
