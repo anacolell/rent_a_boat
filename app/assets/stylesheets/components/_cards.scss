@@ -54,12 +54,17 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-category {
-
+.card-category a{
+  text-decoration:none;
 }
 
-.card-category h3 {
+.card-category h3,
+.card-category h5 {
   letter-spacing: 0.15em;
+}
+
+.card-category h5 {
+  font-size: 18px;
 }
 
 .bookmark a{
