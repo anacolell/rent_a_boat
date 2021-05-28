@@ -11,7 +11,7 @@
               <%= image_tag('user.png', class: "avatar-dashboard") %>
           <% end %>
         <% end %>
-        <p><%= @user.first_name %> <%= @user.last_name %><p>
+        <p class="username-dashboard"><%= @user.first_name %> <%= @user.last_name %><p>
         <p><%= @user.email %><p>
         <%= link_to "Edit account", edit_user_registration_path %>
         <div class="requests-window">
