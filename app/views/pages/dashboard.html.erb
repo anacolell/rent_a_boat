@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="d-flex justify-content-around">
+    <div class="user-info text-center">
+      <%# if @user.photo? %>
+        <%#= cl_image_tag @user.photo, class: "avatar-large", crop: :fill %>
+        <%# else %>
+        <%= link_to edit_user_registration_path do %>
+            <%= image_tag('user.png', class: "avatar-dashboard") %>
+        <% end %>
+      <p><%= @user.first_name %> <%= @user.last_name %><p>
+      <p><%= @user.email %><p>
+      <div class="user-boats">
+      <h3>My boats</h3>
+        <% @user.boats.each do |boat| %>
+          <%= boat.name %>
+        <% end %>
+      </div>
+    </div>
+    <div class="user-bookings">
+      <h2>Hello, <strong><%= @user.first_name %></strong> ! </h2>
+      <h3>Here are your bookings:</h3>
+      <% @bookings.each do |booking| %>
+    <div class="card-dashboard">
+      <div class="trip-info">
+        <p>BOAT: <%= booking.boat.name %></p>
+        <p>DEPARTURE FROM: <%= booking.boat.location %></p>
+        <p>DATE: <%= booking.start_date.strftime("%d %B %Y") %> - <%= booking.end_date.strftime("%d %B %Y") %></p>
+        <p>STATUS: <%= booking.status %></p>
+      </div>
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
