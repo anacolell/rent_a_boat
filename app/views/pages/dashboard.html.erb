@@ -15,7 +15,7 @@
         <p><%= @user.email %><p>
         <div class="requests-window">
           <% if @booking_requests.any? %>
-          <h5>Pending booking requests</h5>
+          <h5 id="booking-header">Pending booking requests</h5>
             <% @booking_requests.each do |booking| %>
               <div class="booking-requests">
                 <% if (booking.status != "accepted" && booking.status != "rejected") %>
@@ -23,10 +23,10 @@
                   <p><%= "#{booking.start_date} - #{booking.end_date}" %></p>
                   <div class="bookings-button">
                     <div id="accept-button">
-                      <%= link_to "Accept", booking_path(booking, query: "accept"), method: :patch %>
+                      <%= link_to "Accept", booking_path(booking, query: "accept"), :id => "booking-btn", method: :patch %>
                     </div>
                     <div id="reject-button">
-                      <%= link_to "Reject", booking_path(booking, query: "reject"), method: :patch %>
+                      <%= link_to "Reject", booking_path(booking, query: "reject"), :id => "booking-btn", method: :patch %>
                     </div>
                   </div>
                 <% else %>
