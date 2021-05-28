@@ -13,6 +13,7 @@
         <% end %>
         <p><%= @user.first_name %> <%= @user.last_name %><p>
         <p><%= @user.email %><p>
+        <%= link_to "Edit account", edit_user_registration_path %>
         <div class="requests-window">
           <% if @booking_requests.any? %>
           <h5 id="booking-header">Pending booking requests</h5>
@@ -54,13 +55,13 @@
           <h4>Here are your bookings:</h4>
           <% @bookings.each do |booking| %>
             <div class="card-dashboard">
-              <div class="trip-info">
+              <div class="card-info">
                 <p>BOAT: <%= booking.boat.name %></p>
                 <p>DEPARTURE FROM: <%= booking.boat.location %></p>
                 <p>DATE: <%= booking.start_date.strftime("%d %B %Y") %> - <%= booking.end_date.strftime("%d %B %Y") %></p>
                 <p>STATUS: <%= booking.status %></p>
               </div>
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <%= cl_image_tag booking.boat.photos.first.key, class:"boat-photo" %>
             </div>
           <% end %>
         </div>
@@ -75,11 +76,11 @@
           <h4>Here are your boats!</h4>
           <% @user.boats.each do |boat| %>
             <div class="card-dashboard">
-              <div class="trip-info">
-                <%= boat.name %>
-                <%= boat.description %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              </div>
+              <div class="card-info">
+                <h2><%= boat.name %></h2>
+                <p><%= boat.description %></p>
+                </div>
+              <%= cl_image_tag boat.photos.first.key, class:"boat-photo" %>
             </div>
           <% end %>
         </div>
