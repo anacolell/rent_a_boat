@@ -117,7 +117,9 @@ boat5 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat5.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000", "http://www.bavariayacht.com/upload/2018/0104/banner3.jpg", "http://www.bavariayacht.com/upload/2018/0104/banner4.jpg"].each do |url|
+  boat5.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat5.save!
 
 file = URI.open('https://cdn.boatinternational.com/files/2021/02/1440f900-6555-11eb-867d-c1d6b000ca05-BLACK-WHITE-Superyacht-for-sale-charter-01.jpg')
@@ -131,7 +133,9 @@ boat6 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat6.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://cdn.boatinternational.com/files/2021/02/1440f900-6555-11eb-867d-c1d6b000ca05-BLACK-WHITE-Superyacht-for-sale-charter-01.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo2-a46a8.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo5-063b5.jpg"].each do |url|
+  boat6.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat6.save!
 
 file = URI.open('https://moranyachts.imgix.net/wp-content/uploads/Luxury-yacht-sales-brokerage-scaled.jpg?auto=format&fit=crop&fm=webp%26nbsp%3B2x&h=400&ixlib=php-3.1.0&w=720&s=d8697af45f516e13c04e4d18813420da')
@@ -145,7 +149,9 @@ boat7 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat7.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://moranyachts.imgix.net/wp-content/uploads/Luxury-yacht-sales-brokerage-scaled.jpg?auto=format&fit=crop&fm=webp%26nbsp%3B2x&h=400&ixlib=php-3.1.0&w=720&s=d8697af45f516e13c04e4d18813420da", "http://www.bavariayacht.com/upload/2018/0104/lunbo2-a46a8.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo5-063b5.jpg"].each do |url|
+  boat7.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat7.save!
 
 file = URI.open('https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg')
@@ -159,7 +165,9 @@ boat8 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat8.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo1-5dc9f.jpg", "http://www.bavariayacht.com/upload/2018/0328/lunbo1.jpg"].each do |url|
+  boat8.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat8.save!
 
 file = URI.open('https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/c3/e5.jpg')
@@ -173,7 +181,9 @@ boat9 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat9.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/c3/e5.jpg", "http://www.bavariayacht.com/upload/2018/0328/lunbo2.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo5.jpg"].each do |url|
+  boat9.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat9.save!
 
 file = URI.open('https://www.ferretti-yachts.com/uploadB2B/Models/Images/Main/Ferretti/medium/44389.jpg')
@@ -187,5 +197,7 @@ boat10 = Boat.new(
     boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
     user: User.all.sample,
   )
-boat10.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+["https://www.ferretti-yachts.com/uploadB2B/Models/Images/Main/Ferretti/medium/44389.jpg", "http://www.bavariayacht.com/upload/2018/0328/lunbotu1-5b1bf.jpg", "http://www.bavariayacht.com/upload/2018/0328/lunbotu5.jpg"].each do |url|
+  boat10.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
 boat10.save!
