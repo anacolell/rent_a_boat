@@ -1,13 +1,13 @@
 .img-footer{
-  width:80px;
+  width:60px;
   margin:0;
   padding:0;
 }
 
 .footer-text a {
-  margin-left:30px;
   color: $navy;
   text-decoration:none;
+  margin-left: 30px;
 }
 
 .footer-text a:hover {
@@ -16,13 +16,32 @@
 
 .footer-icons a{
   font-size: 24px;
-  padding-right: 30px;
-  padding-bottom: 10px;
+  margin-right:30px;
   color: $navy;
   opacity:0.9;
 }
 
 .footer-icons a:hover {
   color: #5dd7d7;
+}
+
+.logo-text {
+  font-family: 'Overpass', sans-serif;
+  font-size:20px;
+  color: $navy;
+}
+
+.logo {
+  margin-top:30px;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .img-footer{
+    width: 80px;
+  }
+  .logo {
+    margin:0;
+  }
 }
 

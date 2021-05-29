@@ -24,10 +24,10 @@ class BookingsController < ApplicationController
 
   def update
     if params[:query] == "accept"
-      @booking.status = "accepted"
+      @booking.status = "confirmed"
       @booking.save
     elsif params[:query] == "reject"
-      @booking.status = "rejected"
+      @booking.status = "cancelled"
       @booking.save
     end
     redirect_to dashboard_path

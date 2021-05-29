@@ -106,18 +106,18 @@ boat4 = Boat.new(
 end
 boat4.save!
 
-file = URI.open('https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000')
+file = URI.open("https://oysteryachts.com/assets/Uploads/24-Oyster-565-55-Foot-Sailing-Yacht-Exterior__FillMaxWzk2MCw2NDBd.jpg")
 boat5 = Boat.new(
     price: rand(60..200),
-    name: "Marbella Cruise",
-    location: "Gothenburg",
+    name: "CRUISER 31",
+    location: "Athens",
     capacity: rand(2..10),
     size: rand(5..20),
-    description: "Sailing yacht - Hanse 575 for rent in Spain, La Lonja Marina Charter.",
-    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    description: "Given her lineage, it is no surprise the CRUISER 31 is a joy to sail shorthanded or with crew. Designed for power, the standard pushbutton in-mast furling with a fractional-rigged sail plan make her easily manageable in all conditions. The twin helm positions offer clear views and control to trim sails, with lines situated in easy reach.",
+    boat_type: "Sailboat",
     user: User.all.sample,
   )
-["https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000", "http://www.bavariayacht.com/upload/2018/0104/banner3.jpg", "http://www.bavariayacht.com/upload/2018/0104/banner4.jpg"].each do |url|
+["https://oysteryachts.com/assets/Uploads/24-Oyster-565-55-Foot-Sailing-Yacht-Exterior__FillMaxWzk2MCw2NDBd.jpg", "https://oysteryachts.com/assets/Uploads/16-Oyster-565-55-Foot-Sailing-Yacht-Exterior__FillMaxWzk2MCw2NDBd.jpg", "https://oysteryachts.com/assets/Uploads/30-Oyster-565-55-Foot-Sailing-Yacht-Exterior__FillMaxWzk2MCw2NDBd.jpg"].each do |url|
   boat5.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
 end
 boat5.save!
@@ -154,18 +154,18 @@ boat7 = Boat.new(
 end
 boat7.save!
 
-file = URI.open('https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg')
+file = URI.open('https://www.bavariayachts.com/fileadmin/_processed_/3/0/csm_bavaria-mb-rline-r40-highlights-teaser-swiper-r40coupe_8a44034dfd.jpg')
 boat8 = Boat.new(
     price: rand(60..200),
-    name: "Lily ",
-    location: "Italy",
+    name: "B.U.B.U 46",
+    location: "Patras",
     capacity: rand(2..10),
     size: rand(5..20),
-    description: "The co-pilot has his/her own navigation seating, which provides 2 seats facing the sea and is set up by simply tilting the back.",
-    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    description: "With its pure lines and an exceptionally modern design, the B.U.B.U 46 is nothing but seductive. She is the embodiment of state of the art technology and innovative solutions. The large COUPE roof can be opened at the press of a button, transforming the B.U.B.U 46 into a true convertible.",
+    boat_type: 'Yacht',
     user: User.all.sample,
   )
-["https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo1-5dc9f.jpg", "http://www.bavariayacht.com/upload/2018/0328/lunbo1.jpg"].each do |url|
+["https://www.bavariayachts.com/fileadmin/_processed_/3/0/csm_bavaria-mb-rline-r40-highlights-teaser-swiper-r40coupe_8a44034dfd.jpg", "https://www.bavariayachts.com/fileadmin/_processed_/2/b/csm_bavaria-mb-rline-r55-interior-01_0cec4ecb81.jpg", "https://www.bavariayachts.com/fileadmin/_processed_/d/9/csm_bavaria-mb-rline-r55-exterior-07_6e3cd04e6d.jpg"].each do |url|
   boat8.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
 end
 boat8.save!
@@ -201,3 +201,37 @@ boat10 = Boat.new(
   boat10.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
 end
 boat10.save!
+
+file = URI.open('https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000')
+boat11 = Boat.new(
+    price: rand(60..200),
+    name: "Marbella Cruise",
+    location: "Gothenburg",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "Sailing yacht - Hanse 575 for rent in Spain, La Lonja Marina Charter.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+["https://robbreport.com/wp-content/uploads/2019/07/adastra-1-courtesy-jochen-manz_orion-shuttleworth.jpg?w=1000", "http://www.bavariayacht.com/upload/2018/0104/banner3.jpg", "http://www.bavariayacht.com/upload/2018/0104/banner4.jpg"].each do |url|
+  boat11.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
+boat11.save!
+
+file = URI.open('https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg')
+boat12 = Boat.new(
+    price: rand(60..200),
+    name: "Lily ",
+    location: "Italy",
+    capacity: rand(2..10),
+    size: rand(5..20),
+    description: "The co-pilot has his/her own navigation seating, which provides 2 seats facing the sea and is set up by simply tilting the back.",
+    boat_type: ['Sailboat', 'Catamaran', 'Motorboat', 'Yacht', 'Rib', 'Canal boat'].sample,
+    user: User.all.sample,
+  )
+["https://images.lucentcms.com/iyc_website/2020/12/5fe9f298d7de6-tatiana-yacht-iyc-profile723-1.jpg", "http://www.bavariayacht.com/upload/2018/0104/lunbo1-5dc9f.jpg", "http://www.bavariayacht.com/upload/2018/0328/lunbo1.jpg"].each do |url|
+  boat12.photos.attach(io: URI.open(url), filename: 'some_name', content_type: '')
+end
+boat12.save!
+
+

@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="dashboard-container mt-5">
-    <div class="d-flex justify-content-around">
+
+    <div class="dashboard-container d-flex justify-content-around mt-5">
    <!--    profile and pending requests -->
-      <div class="pending requests">
+      <div class="pending-requests">
       <div class="user-info text-center">
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class: "avatar-dashboard", crop: :fill %>
@@ -13,8 +13,8 @@
         <% end %>
         <p class="username-dashboard"><%= @user.first_name %> <%= @user.last_name %><p>
         <p><%= @user.email %><p>
-        <%= link_to "Edit account", edit_user_registration_path %>
-        <div class="requests-window">
+        <%= link_to "Edit account", edit_user_registration_path, class:"link-edit-dashboard"%>
+        <div class="requests-window mt-5">
           <% if @booking_requests %>
           <h5 id="booking-header">Pending booking requests</h5>
             <% @booking_requests.each do |booking| %>
@@ -45,8 +45,8 @@
       <div class="dashboard-right mt-5">
         <div class="dashboard-header d-flex justify-content-between mb-4 align-items-center">
         <h2 class="text-center mb-4">Hello, <strong><%= @user.first_name %></strong> !</h2>
-        <div class="d-flex justify-content-end">
-          <a href="#user-bookings" class="ml-5 dashboard-link"><h6>my bookings</h6></a>
+        <div class="dashboard-header-links">
+          <a href="#user-bookings" class="dashboard-link"><h6>my bookings</h6></a>
           <a href="#user-boats" class="ml-3 dashboard-link"><h6>my boats</h6></a>
       </div>
       </div>
@@ -59,7 +59,7 @@
                 <p>BOAT: <%= booking.boat.name %></p>
                 <p>DEPARTURE FROM: <%= booking.boat.location %></p>
                 <p>DATE: <%= booking.start_date.strftime("%d %B %Y") %> - <%= booking.end_date.strftime("%d %B %Y") %></p>
-                <p>STATUS: <%= booking.status %></p>
+                <p>STATUS:<span class="<%= booking.status %>"> <%= booking.status %></span></p>
               </div>
               <%= cl_image_tag booking.boat.photos.first.key, class:"boat-photo" %>
             </div>
@@ -98,5 +98,5 @@
   => status will be displayed in the dashboard for the @boat.user and @booking.user
  -->
     </div>
-  </div>
+
 </div>

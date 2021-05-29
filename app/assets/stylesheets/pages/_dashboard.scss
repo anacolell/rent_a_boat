@@ -8,6 +8,11 @@
   min-height: 80vh;
 }
 
+.dashboard-header-links {
+  display:flex;
+  justify-content: flex-end;
+}
+
 .user-info{
  margin-top:60px;
  padding:40px;
@@ -16,6 +21,29 @@
 .username-dashboard {
   font-size:20px;
 }
+
+#boat-name {
+  margin-top: 16px;
+}
+
+.requests-window {
+  height: fit-content;
+  background-color: rgba(237, 204, 85, 0.2);
+  border-radius: 8px;
+  border: 1px solid rgba(237, 204, 85, 0.8);
+  margin-top: 16px;
+  padding: 8px 0px;
+}
+
+.booking_requests {
+  margin: 8px 0px;
+}
+
+#booking-header {
+  padding: 0px 8px;
+}
+
+/* cards */
 
 .card-dashboard {
   background-color:white;
@@ -60,27 +88,7 @@
   padding: 16px;
 }
 
-#boat-name {
-  margin-top: 16px;
-}
-
-.requests-window {
-  height: fit-content;
-  background-color: rgba(237, 204, 85, 0.2);
-  border-radius: 8px;
-  border: 1px solid rgba(237, 204, 85, 0.8);
-  margin-top: 16px;
-  padding: 8px 0px;
-}
-
-.bookings-button {
-  display: flex;
-  justify-content: center;
-}
-
-.booking_requests {
-  margin: 8px 0px;
-}
+/* buttons */
 
 #accept-button {
   background-color: rgba(145, 219, 96, 0.8);
@@ -110,6 +118,22 @@
     background-color: rgba(253, 16, 21,1);
   }
 }
+
+#booking-btn {
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.bookings-button {
+  display: flex;
+  justify-content: center;
+}
+
+/* links */
 .dashboard-link {
   transition: all 0.2s;
   text-decoration:none;
@@ -124,15 +148,77 @@
   border-bottom:#5dd7d7 solid 1.5px;
 }
 
-#booking-btn {
-  color: white;
+.link-edit-dashboard {
+  color: black;
+}
 
-  &:hover {
-    text-decoration: none;
-    color: white;
+.link-edit-dashboard:hover,
+.link-edit-dashboard:focus {
+  text-decoration: none;
+}
+
+/* status */
+
+.confirmed {
+  color: green;
+}
+
+.cancelled {
+  color: red;
+}
+
+.pending {
+  color: blue;
+}
+
+/* media queries */
+
+// Smallest device
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .dashboard-header {
+    flex-direction:column;
+  }
+
+  .card-dashboard {
+    width: 70vh;
+  }
+
+  .card-dashboard .boat-photo {
+    height: 100%;
+    width: 150px;
+  }
+
+  .dashboard-link {
+    margin:10px;
   }
 }
 
-#booking-header {
-  padding: 0px 8px;
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+
+// }
+
+// Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }
+
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+// }

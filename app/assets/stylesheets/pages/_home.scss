@@ -12,19 +12,20 @@
   height: 67vh;
   width: 100%;
   background-size: cover;
-  position: relative;
   background-position: 0% 18%;
   background-repeat: no-repeat;
+  display:flex;
+  align-items:flex-end;
+  justify-content: center;
 }
 
 #header-container {
-  position: absolute;
-  top: 90px;
-  left: 900px;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 32px 56px;
+  padding: 20px 48px;
   border-radius: 16px;
+  height: 39%;
+  margin-bottom:40px;
 }
 
 .pb-3 {
@@ -73,3 +74,21 @@
   .login-container {
     height: 80vh;
   }
+
+/* media queries */
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    #background {
+    position: relative;
+  }
+
+  #header-container {
+    padding: 32px 56px;
+    border-radius: 16px;
+    height: 39%;
+    position:absolute;
+    top:90px;
+    right:135px;
+  }
+}
