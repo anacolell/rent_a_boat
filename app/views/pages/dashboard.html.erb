@@ -1,9 +1,9 @@
 <div class="container">
 
-    <div class="dashboard-container d-flex justify-content-around mt-5">
+    <div class="dashboard-container">
    <!--    profile and pending requests -->
       <div class="pending-requests">
-      <div class="user-info text-center">
+      <div class="user-info">
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class: "avatar-dashboard", crop: :fill %>
           <% else %>
@@ -14,7 +14,7 @@
         <p class="username-dashboard"><%= @user.first_name %> <%= @user.last_name %><p>
         <p><%= @user.email %><p>
         <%= link_to "Edit account", edit_user_registration_path, class:"link-edit-dashboard"%>
-        <div class="requests-window mt-5">
+        <div class="requests-window">
           <% if @booking_requests %>
           <h5 id="booking-header">Pending booking requests</h5>
             <% @booking_requests.each do |booking| %>
@@ -42,17 +42,17 @@
       </div>
       </div>
   <!--     dashboard right side -->
-      <div class="dashboard-right mt-5">
-        <div class="dashboard-header d-flex justify-content-between mb-4 align-items-center">
-        <h2 class="text-center mb-4">Hello, <strong><%= @user.first_name %></strong> !</h2>
+      <div class="dashboard-right">
+        <div class="dashboard-header">
+        <h2 class="text-center">Hello, <strong><%= @user.first_name %></strong> !</h2>
         <div class="dashboard-header-links">
           <a href="#user-bookings" class="dashboard-link"><h6>my bookings</h6></a>
-          <a href="#user-boats" class="ml-3 dashboard-link"><h6>my boats</h6></a>
+          <a href="#user-boats" class="dashboard-link"><h6>my boats</h6></a>
       </div>
       </div>
       <% unless @user.booking_ids.empty?  %>
         <div id="user-bookings">
-          <h4>Here are your bookings:</h4>
+          <h4 class="dashboard-title">Here are your bookings:</h4>
           <% @bookings.each do |booking| %>
             <div class="card-dashboard">
               <div class="card-info">
@@ -66,14 +66,14 @@
           <% end %>
         </div>
         <% else %>
-          <h4>You have no bookings</h4>
+          <h4 class="dashboard-title">You have no bookings</h4>
           <div class="text-center">
-            <%= link_to "Explore boats", boats_path, class:"btn btn-lg btn-outline-primary text-center mt-4" %>
+            <%= link_to "Explore boats", boats_path, class:"btn btn-lg btn-outline-primary text-center my-4" %>
           </div>
         <% end %>
         <% unless @user.boat_ids.empty? %>
-        <div id="user-boats" class="mt-5">
-          <h4>Here are your boats!</h4>
+        <div id="user-boats">
+          <h4 class="dashboard-title">Here are your boats!</h4>
           <% @user.boats.each do |boat| %>
             <div class="card-dashboard">
               <div class="card-info">
