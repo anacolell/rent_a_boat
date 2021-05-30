@@ -113,7 +113,7 @@ boat5 = Boat.new(
     location: "Athens",
     capacity: rand(2..10),
     size: rand(5..20),
-    description: "Given her lineage, it is no surprise the CRUISER 31 is a joy to sail shorthanded or with crew. Designed for power, the standard pushbutton in-mast furling with a fractional-rigged sail plan make her easily manageable in all conditions. The twin helm positions offer clear views and control to trim sails, with lines situated in easy reach.",
+    description: "Given her lineage, it is no surprise the CRUISER 31 is a joy to sail shorthanded or with crew. Designed for power, the standard pushbutton in-mast furling with a fractional-rigged sail plan make her easily manageable in all conditions.",
     boat_type: "Sailboat",
     user: User.all.sample,
   )
@@ -161,7 +161,7 @@ boat8 = Boat.new(
     location: "Patras",
     capacity: rand(2..10),
     size: rand(5..20),
-    description: "With its pure lines and an exceptionally modern design, the B.U.B.U 46 is nothing but seductive. She is the embodiment of state of the art technology and innovative solutions. The large COUPE roof can be opened at the press of a button, transforming the B.U.B.U 46 into a true convertible.",
+    description: "With its pure lines and an exceptionally modern design, the B.U.B.U 46 is nothing but seductive. She is the embodiment of state of the art technology and innovative solutions.",
     boat_type: 'Yacht',
     user: User.all.sample,
   )
