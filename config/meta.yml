@@ -1,5 +1,5 @@
 meta_product_name: "Rent a Boat"
 meta_title: "Rent a Boat - Easilybook a boat for your next trip"
 meta_description: "At Rent-a-boat you can choose between different types of boats. Simply indicate where and when you are planning your trip. Browse through the large selection of boats now and find your dream boat!"
-meta_image: "cover.png" # should exist in `app/assets/images/`
+meta_image: "home_page.jpeg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
