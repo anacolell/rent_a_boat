@@ -157,7 +157,7 @@ boat7.save!
 file = URI.open('https://www.bavariayachts.com/fileadmin/_processed_/3/0/csm_bavaria-mb-rline-r40-highlights-teaser-swiper-r40coupe_8a44034dfd.jpg')
 boat8 = Boat.new(
     price: rand(60..200),
-    name: "B.U.B.U 46",
+    name: "Nautitech 46",
     location: "Patras",
     capacity: rand(2..10),
     size: rand(5..20),
