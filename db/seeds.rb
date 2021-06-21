@@ -161,7 +161,7 @@ boat8 = Boat.new(
     location: "Patras",
     capacity: rand(2..10),
     size: rand(5..20),
-    description: "With its pure lines and an exceptionally modern design, the B.U.B.U 46 is nothing but seductive. She is the embodiment of state of the art technology and innovative solutions.",
+    description: "With its pure lines and an exceptionally modern design, the Nautitech 46 is nothing but seductive. She is the embodiment of state of the art technology and innovative solutions.",
     boat_type: 'Yacht',
     user: User.all.sample,
   )
